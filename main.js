@@ -4,30 +4,23 @@ const BACKEND_URL = 'https://portfolio-xgqz.onrender.com';
 // React components
 const { useState, useEffect } = React;
 
-// Placeholder images for demo projects
-const PLACEHOLDER_IMAGES = [
-    "https://source.unsplash.com/400x200/?technology,code",
-    "https://source.unsplash.com/400x200/?app,design",
-    "https://source.unsplash.com/400x200/?website,development",
-    "https://source.unsplash.com/400x200/?software,project",
-    "https://source.unsplash.com/400x200/?react,frontend",
-    "https://source.unsplash.com/400x200/?backend,api",
-    "https://source.unsplash.com/400x200/?portfolio,web",
-    "https://source.unsplash.com/400x200/?javascript,programming",
-    "https://source.unsplash.com/400x200/?css,html",
-    "https://source.unsplash.com/400x200/?database,cloud"
-];
-
-// Generate lots of placeholder projects
-function getPlaceholderProjects(count = 12) {
-    return Array.from({ length: count }).map((_, i) => ({
-        id: `placeholder-${i}`,
-        title: `Project Demo ${i + 1}`,
-        description: "This is a placeholder project description. It showcases the project's features and technologies used.",
-        link: "#",
-        image: PLACEHOLDER_IMAGES[i % PLACEHOLDER_IMAGES.length],
-        tags: ["React", "API", "Demo"]
-    }));
+function Navbar({ page, onNavigate }) {
+    return (
+        <nav className="navbar">
+            <span
+                className={`nav-link${page === "home" ? " active" : ""}`}
+                onClick={() => onNavigate("home")}
+            >
+                Home
+            </span>
+            <span
+                className={`nav-link${page === "projects" ? " active" : ""}`}
+                onClick={() => onNavigate("projects")}
+            >
+                Projects
+            </span>
+        </nav>
+    );
 }
 
 function ProjectList({ showImages = false, projects: propProjects }) {
@@ -146,7 +139,7 @@ function ContactForm() {
     );
 }
 
-function HomePage({ onNavigate }) {
+function HomePage() {
     return (
         <div>
             <header>
@@ -155,24 +148,22 @@ function HomePage({ onNavigate }) {
             </header>
             <main>
                 <section id="projects">
-                    <h2>
-                        Projects
-                        <button
+                    <h2>Projects</h2>
+                    <ProjectList />
+                    <div style={{ marginTop: 24 }}>
+                        <a
+                            href="projects.html"
+                            className="nav-link"
                             style={{
-                                marginLeft: 16,
                                 fontSize: "1rem",
-                                background: "none",
-                                border: "none",
                                 color: "#3358e6",
-                                cursor: "pointer",
-                                textDecoration: "underline"
+                                textDecoration: "underline",
+                                cursor: "pointer"
                             }}
-                            onClick={() => onNavigate("projects")}
                         >
                             View All Projects →
-                        </button>
-                    </h2>
-                    <ProjectList />
+                        </a>
+                    </div>
                 </section>
                 <section id="contact">
                     <h2>Contact Me</h2>
@@ -183,21 +174,30 @@ function HomePage({ onNavigate }) {
     );
 }
 
-// Dedicated template for the projects page with hardcoded placeholder projects
-function ProjectsPage({ onNavigate }) {
-    const placeholderProjects = [
-        {
-            id: "p1",
-            title: "Weather Dashboard",
-            description: "A responsive dashboard that displays real-time weather data for any city using OpenWeatherMap API.",
-            image: "https://source.unsplash.com/400x200/?weather,clouds",
-            tags: ["React", "API", "Weather"],
-            link: "#"
-        },
-        {
-            id: "p2",
-            title: "Task Manager Pro",
-            description: "A productivity app to manage daily tasks, set reminders, and track progress with beautiful charts.",
+function App() {
+    const [page, setPage] = useState("home");
+    useEffect(() => {
+        // Only for SPA navigation, but since we have separate HTML files, always show HomePage
+        setPage("home");
+    }, []);
+    return (
+        <div>
+            <Navbar page={page} onNavigate={p => {
+                if (p === "projects") {
+                    window.location.href = "projects.html";
+                } else {
+                    setPage(p);
+                }
+            }} />
+            <HomePage />
+        </div>
+    );
+}
+
+// Mount React app
+document.addEventListener('DOMContentLoaded', () => {
+    ReactDOM.render(<App />, document.getElementById('root'));
+});
             image: "https://source.unsplash.com/400x200/?tasks,productivity",
             tags: ["React", "Charts", "Productivity"],
             link: "#"

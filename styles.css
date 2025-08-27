@@ -223,6 +223,35 @@ h2 {
     box-shadow: 0 4px 24px rgba(79, 140, 255, 0.07);
 }
 
+/* Navbar styles */
+.navbar {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    background: #f7faff;
+    padding: 1rem 0 0.5rem 0;
+    font-size: 1.1rem;
+    border-bottom: 1px solid #e6ecfa;
+    margin-bottom: 1.5rem;
+}
+
+.nav-link {
+    color: #3358e6;
+    cursor: pointer;
+    padding: 0.2rem 0.7rem;
+    border-radius: 6px;
+    transition: background 0.15s, color 0.15s;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background: #e6ecfa;
+    color: #222;
+}
+
 /* Responsive */
 @media (max-width: 600px) {
     main {
