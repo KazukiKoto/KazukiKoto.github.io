@@ -1,5 +1,5 @@
 // Replace with your actual Render backend URL
-const BACKEND_URL = 'https://your-backend.onrender.com';
+const BACKEND_URL = 'https://portfolio-xgqz.onrender.com';
 
 document.addEventListener('DOMContentLoaded', () => {
     loadProjects();
