@@ -1,0 +1,39 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f9f9f9;
+}
+header {
+    background: #222;
+    color: #fff;
+    padding: 2rem;
+    text-align: center;
+}
+main {
+    max-width: 800px;
+    margin: 2rem auto;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+}
+section {
+    margin-bottom: 2rem;
+}
+#projects-list > div {
+    border-bottom: 1px solid #eee;
+    padding: 1rem 0;
+}
+form input, form textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+}
+form button {
+    padding: 0.5rem 1rem;
+}
+#contact-status {
+    margin-top: 1rem;
+    color: green;
+}
