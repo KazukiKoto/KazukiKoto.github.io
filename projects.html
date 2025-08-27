@@ -13,18 +13,18 @@
     <script>
     const { useState } = React;
 
-    function Navbar({ page, onNavigate }) {
+    function Navbar({ page }) {
         return (
             <nav className="navbar">
                 <span
                     className={`nav-link${page === "home" ? " active" : ""}`}
-                    onClick={() => onNavigate("home")}
+                    onClick={() => window.location.href = "index.html"}
                 >
                     Home
                 </span>
                 <span
                     className={`nav-link${page === "projects" ? " active" : ""}`}
-                    onClick={() => onNavigate("projects")}
+                    onClick={() => window.location.href = "projects.html"}
                 >
                     Projects
                 </span>
@@ -166,14 +166,9 @@
     }
 
     function App() {
-        const [page, setPage] = useState("projects");
         return (
             <div>
-                <Navbar page={page} onNavigate={p => {
-                    if (p === "home") {
-                        window.location.href = "index.html";
-                    }
-                }} />
+                <Navbar page="projects" />
                 <ProjectsPage />
             </div>
         );

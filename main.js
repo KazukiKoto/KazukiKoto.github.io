@@ -4,18 +4,18 @@ const BACKEND_URL = 'https://portfolio-xgqz.onrender.com';
 // React components
 const { useState, useEffect } = React;
 
-function Navbar({ page, onNavigate }) {
+function Navbar({ page }) {
     return (
         <nav className="navbar">
             <span
                 className={`nav-link${page === "home" ? " active" : ""}`}
-                onClick={() => onNavigate("home")}
+                onClick={() => window.location.href = "index.html"}
             >
                 Home
             </span>
             <span
                 className={`nav-link${page === "projects" ? " active" : ""}`}
-                onClick={() => onNavigate("projects")}
+                onClick={() => window.location.href = "projects.html"}
             >
                 Projects
             </span>
@@ -175,19 +175,19 @@ function HomePage() {
 }
 
 function App() {
-    const [page, setPage] = useState("home");
-    useEffect(() => {
-        // Only for SPA navigation, but since we have separate HTML files, always show HomePage
-        setPage("home");
-    }, []);
+    // Always show HomePage, but pass "home" as the current page for Navbar
     return (
         <div>
-            <Navbar page={page} onNavigate={p => {
-                if (p === "projects") {
-                    window.location.href = "projects.html";
-                } else {
-                    setPage(p);
-                }
+            <Navbar page="home" />
+            <HomePage />
+        </div>
+    );
+}
+
+// Mount React app
+document.addEventListener('DOMContentLoaded', () => {
+    ReactDOM.render(<App />, document.getElementById('root'));
+});
             }} />
             <HomePage />
         </div>
