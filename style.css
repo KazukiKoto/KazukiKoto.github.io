@@ -2,8 +2,7 @@
 
 :root {
     --black: #232323;         /* slightly grey black */
-    --green: #808000;         /* olive green */
-    --green-dark: #556B2F;    /* dark olive green */
+    --green: #556B2F;    /* dark olive green */
     --grey-light: #f4f4f4;
     --grey: #e0e0e0;
     --grey-dark: #444;
@@ -20,9 +19,9 @@ body {
 }
 
 nav {
-    background: var(--green-dark);
+    background: var(--green);
     padding: 1.2em 0;
-    text-align: center;
+    text-align: left;
     box-shadow: 0 2px 8px rgba(35,35,35,0.08);
     position: sticky;
     top: 0;
@@ -51,8 +50,8 @@ nav a {
 
 nav a:hover {
     color: var(--white);
-    background: var(--green);
-    border: 2px solid var(--black);
+    background: var(--black);
+    border: 2px solid var(--white);
     box-shadow: 0 4px 16px rgba(128,128,0,0.15);
     transform: translateY(-2px) scale(1.05);
     text-decoration: none;
@@ -130,7 +129,7 @@ h2 {
     transform: translateY(-6px) scale(1.03);
     box-shadow: 0 8px 32px rgba(39,174,96,0.13);
     background: var(--green);
-    border-color: var(--green-dark);
+    border-color: var(--green);
 }
 
 .project-card img {
@@ -139,7 +138,7 @@ h2 {
     margin-bottom: 1em;
     box-shadow: 0 2px 8px rgba(24,24,24,0.06);
     background: var(--grey);
-    border: 2px dashed var(--green-dark);
+    border: 2px dashed var(--green);
 }
 
 .project-card h2 {
