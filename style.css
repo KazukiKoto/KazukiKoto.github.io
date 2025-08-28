@@ -1,0 +1,73 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f7f7f7;
+    color: #222;
+}
+nav {
+    background: #222;
+    padding: 1em;
+    text-align: center;
+}
+nav a {
+    color: #fff;
+    margin: 0 1em;
+    text-decoration: none;
+    font-weight: bold;
+}
+nav a:hover {
+    text-decoration: underline;
+}
+.hero {
+    text-align: center;
+    padding: 2em 0;
+    background: #e0e0e0;
+}
+.profile-img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+main {
+    max-width: 800px;
+    margin: 2em auto;
+    background: #fff;
+    padding: 2em;
+    border-radius: 8px;
+}
+.projects-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    justify-content: center;
+}
+.project-card {
+    background: #f0f0f0;
+    border-radius: 8px;
+    padding: 1em;
+    width: 300px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    text-align: center;
+}
+.project-card img {
+    width: 100%;
+    border-radius: 4px;
+}
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    max-width: 400px;
+    margin: 0 auto;
+}
+footer {
+    text-align: center;
+    padding: 1em 0;
+    background: #222;
+    color: #fff;
+    margin-top: 2em;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
