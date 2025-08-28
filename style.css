@@ -3,7 +3,7 @@
 :root {
     --primary: #222b2f;
     --accent: #7bb86f;
-    --background: #f8f9fb;
+    --background: #e5e7eb; /* solid grey */
     --surface: #fff;
     --text: #232323;
     --muted: #6c757d;
@@ -299,5 +299,3 @@ footer {
         height: 140px;
     }
 }
-
-/* ...existing code... */
