@@ -1,73 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Montserrat', Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: #f7f7f7;
+    background: linear-gradient(135deg, #f7f7f7 0%, #e3e9f0 100%);
     color: #222;
+    min-height: 100vh;
 }
+
 nav {
-    background: #222;
-    padding: 1em;
+    background: #232946;
+    padding: 1.2em 0;
     text-align: center;
+    box-shadow: 0 2px 8px rgba(35,41,70,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
+
 nav a {
     color: #fff;
-    margin: 0 1em;
+    margin: 0 1.5em;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: color 0.2s;
+    font-size: 1.1em;
 }
+
 nav a:hover {
+    color: #eebbc3;
     text-decoration: underline;
 }
+
 .hero {
     text-align: center;
-    padding: 2em 0;
-    background: #e0e0e0;
+    padding: 3em 0 2em 0;
+    background: linear-gradient(120deg, #eebbc3 0%, #e0e0e0 100%);
+    box-shadow: 0 4px 16px rgba(238,187,195,0.08);
 }
+
 .profile-img {
     border-radius: 50%;
-    width: 150px;
-    height: 150px;
+    width: 160px;
+    height: 160px;
+    border: 5px solid #232946;
+    box-shadow: 0 2px 16px rgba(35,41,70,0.12);
+    margin-bottom: 1em;
 }
+
 main {
-    max-width: 800px;
-    margin: 2em auto;
+    max-width: 900px;
+    margin: 2.5em auto;
     background: #fff;
-    padding: 2em;
-    border-radius: 8px;
+    padding: 2.5em 2em;
+    border-radius: 14px;
+    box-shadow: 0 4px 24px rgba(35,41,70,0.07);
+    min-height: 60vh;
 }
+
+section {
+    margin-bottom: 2.5em;
+}
+
+h1, h2 {
+    color: #232946;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.3em;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-bottom: 0.7em;
+}
+
 .projects-list {
     display: flex;
     flex-wrap: wrap;
     gap: 2em;
     justify-content: center;
 }
+
 .project-card {
-    background: #f0f0f0;
-    border-radius: 8px;
-    padding: 1em;
-    width: 300px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    text-align: center;
+    background: #f0f4f8;
+    border-radius: 12px;
+    padding: 1.5em 1em 1.2em 1em;
+    width: 320px;
+    box-shadow: 0 2px 12px rgba(35,41,70,0.08);
+    text-align: left;
+    transition: transform 0.18s, box-shadow 0.18s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+.project-card:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 8px 32px rgba(35,41,70,0.13);
+    background: #eebbc3;
+}
+
 .project-card img {
     width: 100%;
-    border-radius: 4px;
+    border-radius: 8px;
+    margin-bottom: 1em;
+    box-shadow: 0 2px 8px rgba(35,41,70,0.06);
 }
+
+.project-card h2 {
+    margin: 0.5em 0 0.4em 0;
+    font-size: 1.2em;
+    color: #232946;
+}
+
+.project-card p {
+    color: #444;
+    font-size: 1em;
+    line-height: 1.6;
+}
+
 .contact-form {
     display: flex;
     flex-direction: column;
-    gap: 1em;
-    max-width: 400px;
+    gap: 1.3em;
+    max-width: 420px;
     margin: 0 auto;
+    background: #f0f4f8;
+    padding: 2em 1.5em;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(35,41,70,0.07);
 }
+
+.contact-form label {
+    font-weight: 600;
+    color: #232946;
+    margin-bottom: 0.4em;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.7em;
+    border: 1.5px solid #eebbc3;
+    border-radius: 6px;
+    font-size: 1em;
+    background: #fff;
+    color: #232946;
+    transition: border 0.2s;
+    margin-top: 0.2em;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border: 1.5px solid #232946;
+    outline: none;
+}
+
+.contact-form button {
+    background: #232946;
+    color: #fff;
+    border: none;
+    padding: 0.9em 0;
+    border-radius: 6px;
+    font-size: 1.1em;
+    font-weight: 700;
+    cursor: not-allowed;
+    opacity: 0.7;
+    margin-top: 0.5em;
+    transition: background 0.2s;
+}
+
 footer {
     text-align: center;
-    padding: 1em 0;
-    background: #222;
+    padding: 1.5em 0 1em 0;
+    background: #232946;
     color: #fff;
-    margin-top: 2em;
+    margin-top: 3em;
     position: relative;
     bottom: 0;
     width: 100%;
+    font-size: 1em;
+    letter-spacing: 1px;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+}
+
+@media (max-width: 1000px) {
+    main {
+        max-width: 98vw;
+        padding: 1.2em 0.5em;
+    }
+    .projects-list {
+        flex-direction: column;
+        align-items: center;
+    }
+    .project-card {
+        width: 95%;
+    }
 }
