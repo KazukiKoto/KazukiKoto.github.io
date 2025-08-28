@@ -68,6 +68,7 @@ main, .hero {
 
 /* Fix hero section spacing */
 .hero {
+    position: fixed;
     display: flex;
     flex-direction: column;
     align-items: center;
