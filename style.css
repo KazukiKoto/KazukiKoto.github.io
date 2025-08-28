@@ -61,6 +61,117 @@ nav a:hover, nav a:focus {
     background: none;
 }
 
+/* Add space below navbar for content */
+main, .hero {
+    margin-top: 80px;
+}
+
+/* Fix hero section spacing */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3em 1em 2em 1em;
+    background: none;
+    box-shadow: none;
+    margin-bottom: 2em;
+}
+
+.hero .profile-img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    margin-bottom: 1.2em;
+    object-fit: cover;
+    border: 2px solid var(--border);
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    font-weight: 700;
+    margin: 0.2em 0 0.2em 0;
+    color: var(--primary);
+    letter-spacing: 0.01em;
+}
+
+.hero p {
+    font-size: 1.2em;
+    color: var(--muted);
+    margin: 0.2em 0 0 0;
+}
+
+/* Projects vertical list, alternate image/text */
+.projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+    justify-content: flex-start;
+    align-items: stretch;
+    margin: 0;
+    padding: 0;
+}
+
+.project-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2em;
+    margin-bottom: 0;
+    background: none;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+}
+
+.project-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.project-image {
+    flex: 0 0 220px;
+    max-width: 220px;
+    width: 100%;
+    height: 150px;
+    border-radius: 12px;
+    object-fit: cover;
+    border: 1px solid var(--border);
+    background: var(--background);
+    margin: 0;
+}
+
+.project-info {
+    flex: 1 1 0;
+    padding: 0;
+}
+
+.project-info h2 {
+    margin: 0 0 0.5em 0;
+    font-size: 1.2em;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.project-info p {
+    color: var(--muted);
+    font-size: 1em;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Remove old card styles */
+.project-card {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: auto !important;
+    display: block !important;
+    transition: none !important;
+}
+
 main {
     max-width: 900px;
     margin: 100px auto 0 auto;
@@ -159,75 +270,33 @@ footer {
     }
 }
 
+@media (max-width: 900px) {
+    .project-row, .project-row.reverse {
+        flex-direction: column !important;
+        align-items: flex-start;
+        gap: 1em;
+    }
+    .project-image {
+        max-width: 100%;
+        width: 100%;
+        height: 180px;
+    }
+}
+
 @media (max-width: 600px) {
     nav {
         padding: 0 1vw;
         height: 52px;
     }
+    main, .hero {
+        margin-top: 65px;
+    }
     main {
-        margin-top: 70px;
         padding: 1em 0.2em;
     }
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 0.7em;
-    border: 1.5px solid var(--green);
-    border-radius: 6px;
-    font-size: 1em;
-    background: var(--white);
-    color: var(--black);
-    transition: border 0.2s;
-    margin-top: 0.2em;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-    border: 1.5px solid var(--black);
-    outline: none;
-}
-
-.contact-form button {
-    background: var(--green);
-    color: var(--white);
-    border: none;
-    padding: 0.9em 0;
-    border-radius: 6px;
-    font-size: 1.1em;
-    font-weight: 700;
-    cursor: not-allowed;
-    opacity: 0.7;
-    margin-top: 0.5em;
-    transition: 0.2s;
-}
-
-footer {
-    text-align: center;
-    padding: 1.5em 0 1em 0;
-    background: var(--black);
-    color: var(--green);
-    margin-top: 3em;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    font-size: 1em;
-    letter-spacing: 1px;
-    border-top-left-radius: 18px;
-    border-top-right-radius: 18px;
-}
-
-@media (max-width: 1000px) {
-    main {
-        max-width: 98vw;
-        padding: 1.2em 0.5em;
-    }
-    .projects-list {
-        flex-direction: column;
-        align-items: center;
-    }
-    .project-card {
-        width: 95%;
+    .project-image {
+        height: 140px;
     }
 }
+
+/* ...existing code... */
